@@ -1,27 +1,40 @@
 body{
-    background: #eeeeee;
+    background: var(--text-color);
+}
+:root{
+    --background : #18534F;
+    --second-color : #226D68;
+    --text-color : #ECF8F6 ;
+    --third-color : #FEEAA1 ;
+    --fourth-color : #D6955B;
+    /* --bouton-hover : #c32626;
+    --text-gris: #333333;
+    --text-blanc: #FFFFFF;
+    --text-gris-bleu : #384454 ;
+    --text-jaune : #E1A624;
+    --couleur-marron : #AD956B; */
 }
 .flex-container {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     gap: 20px;
     width: 90%;
     margin: 80px auto;
 }
 
 .pop-card{
-    background-color: rgba(50, 100,50,0.1);
+    background-color: var(--background);
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.2rem;
     color: white;
     display: flex;
     flex-direction: column;
-    border: 1px solid rgba(50, 100,50,0.5);
+    border: 1px solid var(--fourth-color);
     border-radius: 5px;
-    box-shadow: 2px 2px 2px rgba(50, 100,50,0.3);
-    width: 20%;
-    height: 400px;
-    justify-content: center;
+    box-shadow: 1px 1px 8px var(--fourth-color);
+    width: 350px;
+    height: 480px;
+    justify-content: space-around;
     align-items: center;
 }
 .pop-card:hover{
@@ -30,4 +43,70 @@ body{
 }
 .picture-size{
     height: 300px;
+}
+
+
+/*CALENDRIER*/
+
+.container-calendar{
+    display: flex;
+    min-height: 70px;
+}
+
+.calendar{
+    width: 90px;
+    min-height: 60px;
+    border: 1.5px solid var(--fourth-color);
+    border-radius: 5px;
+    position: relative;
+    left: -50px;
+    top: -10px;
+}
+
+.calendar-deco{
+    position: absolute;
+    top: -20%;
+    left: 10%;
+    width: 80%;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.calendar-deco p {
+    width: 12px;
+    height: 25px;
+    background-color: var(--text-color);
+    border-radius: 25px;
+}
+
+.calendar-deco2{
+    width: 100%;
+    height: 25px;
+    background-color: var(--fourth-color);
+}
+
+.calendar-date{
+    position: absolute;
+    top: 15px;
+    left: 21px;
+    color: var(--text-color);
+}
+
+/* PRICE */
+
+.price-card{
+    position: relative;
+    right: -30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.price-image{
+    height: 40px;
 }
