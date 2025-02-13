@@ -1,0 +1,39 @@
+body{
+    background: var(--text-color);
+}
+:root{
+    --background : #18534F;
+    --second-color : #226D68;
+    --text-color : #ECF8F6 ;
+    --third-color : #FEEAA1 ;
+    --fourth-color : #D6955B;
+}
+table{
+    width: 96%;
+    border: 2px solid black;
+    margin: 20px auto;
+    border-collapse: collapse;
+    z-index: 1;
+}
+
+thead{
+    color: var(--background);
+}
+
+th,td{
+    border: 2px solid rgba(0, 0, 0, 1);
+    text-align: center;
+    vertical-align: middle;
+    width: 15%;
+}
+
+.container-button-admin{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.button-delete:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}

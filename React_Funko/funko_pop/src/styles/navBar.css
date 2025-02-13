@@ -1,9 +1,24 @@
 body{
-    background-color: black;
+    background-color: var(--text-color);
 }
+
+:root{
+    --background : #18534F;
+    --second-color : #226D68;
+    --text-color : #ECF8F6 ;
+    --third-color : #FEEAA1 ;
+    --fourth-color : #D6955B;
+    /* --bouton-hover : #c32626;
+    --text-gris: #333333;
+    --text-blanc: #FFFFFF;
+    --text-gris-bleu : #384454 ;
+    --text-jaune : #E1A624;
+    --couleur-marron : #AD956B; */
+}
+
 .container-navBar{
-    background-color: rgba(17, 41, 17, 0.81);
-    color: white;
+    background-color: var(--background);
+    color: var(--text-color);
     height: 100px;
     width: 100%;
     position: fixed;
@@ -11,6 +26,7 @@ body{
     display: flex;
     justify-content: start;
     align-items: center;
+    z-index: 1000;
 }
 
 .container-img{
@@ -26,7 +42,7 @@ body{
     font-size: 1.8rem;
     text-align: center;
     display: flex;
-    color: rgb(217, 114, 10);   
+    color: var(--fourth-color);   
     gap: 20px;
 }
 
@@ -49,7 +65,7 @@ body{
     position: absolute;
     top: 100px;
     left: 25%;
-    background-color: rgba(17, 41, 17, 0.81);
+    background-color: var(--background);
     width: 50%;
     text-align: center;
     z-index: 10;
@@ -57,39 +73,55 @@ body{
     cursor: pointer;
 }
 
-/* ////////////////////////////////////// */
-
-/* .navbar-test{
-    display: flex;
-    flex-flow: row wrap;
-    width: 100%;
-    height: 100px;
-    background-color: red;
-    color: white;
-    align-items: center;
-}
-.div-img{
-    padding-left: 20px;
-    width: 10%;
-}
-.div-img img{
-    width: 40px;
-}
-
-.div-title{
-    width: 30%;
-    font-size: 1.8rem;
-    text-align: center;
-}
-.div-cat{
-    width: 10%;
-    text-align: center;
-    position: relative;
-}
-.div-cat-2{
+.icon-close{
     position: absolute;
-    top: 80px;
-    background-color: blue;
+    right: 10px;
+    top: 10px;
+}
+.souligne{
+    display: inline-block;
+    position: relative;
+    padding-bottom: 4px;
+}
+.souligne::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--text-color);
+    transition: width 1s ease-out;
+}
+.souligne:hover::after{
     width: 100%;
-    max-height: 200px;
-} */
+}
+.souligne-click{
+    display: inline-block;
+    position: relative;
+    padding-bottom: 4px;
+}
+.souligne-click::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-color);
+    transition: width 0.5s ease-out; 
+}
+
+
+/*PARTIE ADMIN*/
+
+.admin-container{
+    width: 40%;
+    justify-self: flex-end;  
+    display: flex;
+    justify-content: flex-end;
+}
+.admin-container img {
+    width: 40px;
+    cursor: pointer;
+}

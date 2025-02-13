@@ -8,6 +8,7 @@ const PopView = () => {
 
     const [pops, setPops] = useState([]);
 
+    // Récupère tous mes Pops
     const getPop = async () => {
         try {
             const response = await popServices.GetPop()
@@ -16,7 +17,6 @@ const PopView = () => {
             console.log(error);
         }
     }
-
     
     useEffect(() => {
         getPop();

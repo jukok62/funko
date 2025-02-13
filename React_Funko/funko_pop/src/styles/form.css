@@ -1,0 +1,39 @@
+body{
+    background-color: var(--text-color);
+}
+
+:root{
+    --background : #18534F;
+    --second-color : #226D68;
+    --text-color : #ECF8F6 ;
+    --third-color : #FEEAA1 ;
+    --fourth-color : #D6955B;
+}
+
+.container-form{
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 40%;
+    align-items: center;
+    border: 1px solid var(--fourth-color);
+    box-shadow: 1px 1px 5px var(--fourth-color);
+    margin: 20px auto;
+}
+
+.container-input{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.container-input *{
+    border-radius: 5px;
+    color: var(--text-color);
+    padding: 10px;
+}
+
+.container-input select{
+    color: black;
+}
