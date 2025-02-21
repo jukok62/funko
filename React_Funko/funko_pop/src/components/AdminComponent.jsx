@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import '../styles/admin.css'
 import buttonDelete from '../asset/icons/delete.png';
 import buttonModify from '../asset/icons/modify.png';
@@ -8,6 +8,7 @@ import Form from './Form';
 const AdminComponent = ({produits, deletePop, getPop}) => {
 
     const [refresProduits, setRefreshProduits] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         if(refresProduits){
@@ -50,8 +51,6 @@ const AdminComponent = ({produits, deletePop, getPop}) => {
         ))}
         </tbody>
     </table>
-
-    <Form getPop={getPop}/>
     
     </> );
 }
