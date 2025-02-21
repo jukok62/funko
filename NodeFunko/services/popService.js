@@ -19,7 +19,6 @@ const FetchPopById = (id) => {
             if (err) {
                 reject(err);
             }
-            console.log(result);
             resolve(result);
         })
     })
