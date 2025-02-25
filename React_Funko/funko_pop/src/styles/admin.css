@@ -8,6 +8,19 @@ body{
     --third-color : #FEEAA1 ;
     --fourth-color : #D6955B;
 }
+
+.container-buttonAdd{
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container-buttonAdd img:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
 table{
     width: 96%;
     border: 2px solid black;
@@ -37,3 +50,4 @@ th,td{
     cursor: pointer;
     transform: scale(1.2);
 }
+
