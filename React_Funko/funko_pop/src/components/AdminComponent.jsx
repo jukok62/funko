@@ -3,6 +3,7 @@ import {Link, useNavigate} from 'react-router-dom'
 import '../styles/admin.css'
 import buttonDelete from '../asset/icons/delete.png';
 import buttonModify from '../asset/icons/modify.png';
+import buttonAdd from '../asset/icons/ajouter.png'
 import Form from './Form';
 
 const AdminComponent = ({produits, deletePop, getPop}) => {
@@ -20,6 +21,12 @@ const AdminComponent = ({produits, deletePop, getPop}) => {
     console.log(refresProduits);
 
     return ( <>
+
+    <div className="container-buttonAdd">
+        <Link to='/formAdd'>
+            <img src={buttonAdd} alt="" />
+        </Link>
+    </div>
     
     <table>
         <thead>
@@ -42,7 +49,9 @@ const AdminComponent = ({produits, deletePop, getPop}) => {
                 <td className=''> {prod.Special_Pop} / {prod.ID_Pop}</td>  
                 <td>
                     <div className='container-button-admin'>
-                        <img src={buttonModify} alt="" />
+                        <Link to={('/formModify')}>
+                            <img src={buttonModify} alt="" />
+                        </Link>
                         <img src={buttonDelete} className='button-delete' alt="" onClick={() => {deletePop(prod.ID_Pop);
                                                                       setRefreshProduits(true)}}/>
                     </div>
