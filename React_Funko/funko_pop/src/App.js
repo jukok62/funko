@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path='/pops' element={<PopView/>} />
         <Route path='/admin' element={<AdminView/>} />
-        <Route path='/formModify' element={<FormModify/>} />
+        <Route path='/formModify/:id' element={<FormModify/>} />
         <Route path='/formAdd' element={<FormAdd/>} />
       </Routes>
     </BrowserRouter>

@@ -30,15 +30,15 @@ const FormModify = () => {
         e.preventDefault();
     
         const updatedPop = {
-            ID_Pop: popById.ID_Pop,
-            Name_Pop: popModify.namePop || popById.Name_Pop,  // Ici on utilise `||` au lieu de `??`
-            Price_Pop: popModify.price || popById.Price_Pop,
-            Height_Pop: popModify.height || popById.Height_Pop,
-            Special_Pop: popModify.special || popById.Special_Pop,
-            Chase_Pop: popModify.chase || popById.Chase_Pop,
-            Date_Pop: popModify.date || popById.Date_Pop,
-            Number_Pop: popModify.number || popById.Number_Pop,
-            FK_License: popModify.license || popById.FK_License,
+            id: popById.ID_Pop,
+            namePop: popModify.namePop || popById.Name_Pop,  // Ici on utilise `||` au lieu de `??`
+            price: popModify.price || popById.Price_Pop,
+            height: popModify.height || popById.Height_Pop,
+            special: popModify.special || popById.Special_Pop,
+            chase: popModify.chase || popById.Chase_Pop,
+            date: popModify.date || popById.Date_Pop,
+            number: popModify.number || popById.Number_Pop,
+            license: popModify.license || popById.FK_License,
             photo: popModify.photo || popById.photo
         };
     
@@ -55,7 +55,7 @@ const FormModify = () => {
     };
 
     // handleChange pour récupérer la valeur dans l'input de recherche
-    const handleChange = (e) => {
+    const handleChangeModify = (e) => {
         const{name,value} = e.currentTarget;
         
         if(name === 'price' || name === 'height' || name === 'special' || name === 'chase' || name === 'number' || name === 'license'){
@@ -72,25 +72,11 @@ const FormModify = () => {
         console.log('clg de popModify dans view : ',popModify);
     }
 
-    const ModifyPop = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await adminService.modifyPop(popModify)
-            console.log('clg du pop ajouté : ',response);
-            if(response.status === 200) {
-                navigate('/admin');
-            }
-        } catch (e) {
-            console.log(e);
-        }
-    }
-
 
     const getPopById = async () => {
         try {
             const response = await adminService.getPopById(id.id);
             setPopById(response.data)
-            console.log(response);
             console.log(response.data);
         } catch (error) {
             console.log(error);
@@ -99,7 +85,7 @@ const FormModify = () => {
 
     const getLicenses = async () => {
         try {
-            const response = await adminService.getLicenses()
+            const response = await adminService.getLicense()
             setLicenses(response.data)
             // setLicenses(response.data)
         } catch (e) {
@@ -122,7 +108,7 @@ const FormModify = () => {
     
     return ( <>
     
-        <Form/>
+        <Form licenses={licenses} popById={popById} popModify={popModify} handleChangeAdd={handleChangeModify} modifyPop={modifyPop}/>
     
     </> );
 }

@@ -1,27 +1,31 @@
 import React from 'react';
 import '../styles/form.css'
 
-const Form = ({getPop, handleChangeAdd, addPop, licenses, newPop}) => {
+const Form = ({getPop, handleChangeAdd, addPop, licenses, newPop, popById, popModify, modifyPop}) => {
+
+    console.log('clg de popbyid dans component : ',popById);
 
     console.log('clg de addPop dans component : ', addPop);
     return ( <>
+
+        <h1>{popById ? "Modifications du Pop " : "Ajoutez un nouveau Pop"}</h1>
     
         <form>
             <div className="container-form">
 
                 <div className="container-input">
                     <label htmlFor='name'>Nom du produit:</label>
-                    <input type="text" name="namePop" id='name' onChange={handleChangeAdd}/>
+                    <input type="text" name="namePop" id='name' onChange={handleChangeAdd} placeholder={popById ? popById.Name_Pop : ''}/>
                 </div>
 
                 <div className="container-input">
                     <label htmlFor='price'>Prix:</label>
-                    <input type="text" name="price" id='price' onChange={handleChangeAdd} />
+                    <input type="text" name="price" id='price' onChange={handleChangeAdd} placeholder={popById ? popById.Price_Pop : ''}/>
                 </div>
 
                 <div className="container-input">
                     <label htmlFor='height'>Taille</label>
-                    <input type="text" name="height" id='height' onChange={handleChangeAdd}/>
+                    <input type="text" name="height" id='height' onChange={handleChangeAdd} placeholder={popById ? popById.Height_Pop : ''}/>
                 </div>
 
                 <div className="container-input">
@@ -42,12 +46,12 @@ const Form = ({getPop, handleChangeAdd, addPop, licenses, newPop}) => {
 
                 <div className="container-input">
                     <label htmlFor='Date'>Date</label>
-                    <input type="text" name="date" id='Date' onChange={handleChangeAdd}/> 
+                    <input type="text" name="date" id='Date' onChange={handleChangeAdd} placeholder={popById ? popById.Date_Pop : ''}/> 
                 </div>   
 
                 <div className="container-input">
                     <label htmlFor='number'>Numéro</label>
-                    <input type="text" name="number" id='number' onChange={handleChangeAdd}/> 
+                    <input type="text" name="number" id='number' onChange={handleChangeAdd} placeholder={popById ? popById.Number_Pop : ''}/> 
                 </div> 
 
                 <div className="container-input">
@@ -66,7 +70,7 @@ const Form = ({getPop, handleChangeAdd, addPop, licenses, newPop}) => {
                         <input type="file" name='photo' onChange={handleChangeAdd} />
                 </div>   
 
-                <input type="submit" value="Envoyer"  onClick={newPop}/>
+                <input type="submit" value={popById ? "Modifier" : "Ajouter"}  onClick={popById ? modifyPop : newPop}/>
             </div>
         </form>
         

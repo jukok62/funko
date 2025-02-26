@@ -49,7 +49,7 @@ const AdminComponent = ({produits, deletePop, getPop}) => {
                 <td className=''> {prod.Special_Pop} / {prod.ID_Pop}</td>  
                 <td>
                     <div className='container-button-admin'>
-                        <Link to={('/formModify')}>
+                        <Link to={`/formModify/${prod.ID_Pop}`}>
                             <img src={buttonModify} alt="" />
                         </Link>
                         <img src={buttonDelete} className='button-delete' alt="" onClick={() => {deletePop(prod.ID_Pop);
